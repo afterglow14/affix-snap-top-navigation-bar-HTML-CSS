@@ -1,0 +1,10 @@
+.affix {
+      top: 0; /* this will snap the <div>, the <div> is located on top of top navigation that is insinde the <ul> */
+      width: 100%; /* this will make the with of <ul> to fill the entire width of the screen */
+      z-index: 9999 !important; /* this will position the top navigation bar on top of any element */
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;  /* control the top padding of <div> located on top of top navigation bar that is inside <ul>
+      removing this will put a white space on top of the <div> */
+  }

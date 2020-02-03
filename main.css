@@ -1,0 +1,124 @@
+body {
+   margin: 0; /* if this is not set to zero the top navigation bar will not be affixed at the edges of the screen */
+   background-color: none; /* this is the background color of the whole website or document, edit this to suit your
+    color preference */
+    margin-top: 0px;    
+}
+
+.text {
+    color: green;
+}
+
+/*##################### BEGINNING: TOP NAVIGATION BAR #####################*/
+
+/*-------------------- BEGINNING: Top Navigation Bar content using <ul> (unordered list) --------------------*/
+ul { /* this is an unordered list used to create and format the top navigation bar's main container */
+    font-family: verdana, arial, helvetica; /* if the first font specified is not available it will use the 
+    next font in the list */
+    list-style-type: none; /* removes numbering, bullets, circles, etc. on the top navigation bar */
+    margin: 0; /* setting this value other than zero will override the "margin: 0" that is specified in the 
+    "body" class selector, this is actually about the margin used by the unorderd list not by the whole page */
+    padding: 0; /* this specifies the left indent size of <ul> */
+    overflow: hidden; /* removes scroll bar on the top navigation bar, scroll bar usually appears if the list overflows outside
+    the container or the navigation bar */
+    background-color: #4CAF50; /* this is w3schools.com green */    
+    width: 100%; /* when "position: fixed;" is added the <ul> will not assume the 100% width of the screen, to fix it 
+    we need to add "width: 100%" */        
+}
+
+li { /* this makes the orientation of top navigation bar's list (li) inside unordered list (ul) into horizontal, removing
+ this entry will make the top navigation bar to align vertically */
+    float: left;    
+}
+/*-------------------- ENDING: Top Navigation Bar content using <ul> (unordered list) --------------------*/
+
+
+/*-------------------- BEGINNING: Active page indicator on top navigation bar --------------------*/
+li a.active { /* current or active link indicator on top navigation bar */
+        background-color: green; /* most of the time this color is the same as the color used on the links on
+        top navigation bar */
+        color: cyan;  /* most of the time this color is the same as the color used on the links on
+        top navigation bar */
+    }
+/*-------------------- ENDING: Active page indicator on top navigation bar --------------------*/
+
+/*-------------------- BEGINNING: used for centering text --------------------*/
+.center { /* this is for aligning text to the center */
+  text-align: center;  
+}
+/*-------------------- ENDING: used for centering text --------------------*/
+
+/*-------------------- BEGINNING: Top Navigation Bar content formatting --------------------*/
+.topnavigationlinkformat { /* formatting links <a> on top navigation bar */
+    display: inline-block; /* this allows us to set a width and height on the element <a> using padding, removing this
+     will make the height and width of the element to fit with the element <a> itself */
+    padding: 14px 16px; /* if the padding property has two values: top and bottom paddings uses the first value
+    right and left uses the second value */
+    color: white; /* text color of links <a> on the top navigation bar */
+    /* text-align: center; - this style sheet is remove because it seems to have no effect */
+    text-decoration: none; /* this will remove the underline on the links <a> on the top navigation bar */
+}
+
+li.listblockformat {
+    display: inline-block; /* this controls the display behavior of <li> on the top navigation bar, if this is set to none
+     the <li> will be hidden, using block in this style seems to have no effect or has the same effect */
+}
+
+.dropdowncontent { /* dropdown box menu content formatting on top navigation bar */
+    display: none; /* this will hide the dropdown box unless hovered by a mouse (the hover behavior is set using hover - see 
+    the hover style sheet below), changing this to inline-block or block will permanently display the content of the dropdown
+     box therefore rendering the hover to be useless */
+    position: absolute; /* with absolute positioning, an element can be placed anywhere on a page. The element is positioned
+     relative to its first positioned (not static) ancestor element */
+    background-color: #e6ffe6; /* this color is close to white, this is the background color of links inside dropdown menu, */
+    min-width: 160px; /* defines the minimum width of an element, in this case the box size of the dropdown menu */
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    box-shadow: 20px 20px 20px 10px grey; /* this controls the shadow of the dropdown box, if will not be visible if the <body>
+    background is set to a color the is darker than the color specified */
+    z-index: 1; /* specifies the stack order of an element. An element with greater stack order is always in front of an
+     element with a lower stack order */
+}
+
+.dropdowncontent a { /* this formats the links <a> inside tutorials dropdown menu */
+    color: green; /* this controls the color of links inside the dropdown menu */
+    padding: 12px 16px; /* this controls the "top, bottom" and "right, left" border of the links inside the dropdown menu, 
+    if the padding property has two values: top and bottom paddings are 12px right and left paddings are 16px */
+    text-decoration: none; /* this removes the underline on the links inside the dropdwon menu */
+    display: block; /* this displays the link content of dropdown menu vertically or below the menu (it starts a new line),
+     using inline-block will display the links inside the dropdown menu horizontally or next to the element (it will not
+     start a new line) */
+    text-align: left; /* this controls the text location on the link content of dropdown menu */
+}
+
+.dropdowncontent a:hover {  /* this style sheet controls the background color of the content of the the dropdown menu
+ when a mouse hovers above it */
+	background-color: #4CAF50; /* this controls the background color of links inside the dropdwon menu */
+	color: white; /* this controls the text color of links inside the dropdown menu */
+}
+
+.listblockformat:hover .dropdowncontent { /* without .about:hover the dropdown content is permanently displayed,
+	without .aboutusmenu-content there is no dropdown content to be displayed */
+    display: block; /* the rendering box will be displayed in the next line or at the bottom of the menu, using
+    inline-block will display the rendering box next to the element or menu */
+    
+}
+
+.listblockformat:hover .topnavigationlinkformat { /* this retains the hover text color when the mouse points to its dropdown contents, if this
+ 	is broke down or separated into two separate style sheets the hover color will disappear once the mouse hovers on its 
+	dropdwon contents, the separated version on this style sheet can be found below */
+    background-color: green; /* when you hover your mouse above about us menu its background color will change
+     as specified */ /*THIS WILL MAKE THE COLOR STAY WHEN YOU HOVER ON ITS DROPDOWN CONTENT*/
+    color: cyan; /* when you hover your mouse above about us menu its text color will change as specified */
+}
+/* the two style sheets below are the separated version of ".contactus:hover .contactusmenu" style sheet as specifed above. If
+ this is used the hover text color of about us menu will not be retained once the mouse pointer hovers on its dropdown content
+.aboutus:hover {
+    background-color: green;
+}
+.aboutusmenu:hover {
+    color: cyan;
+}
+*/
+/*-------------------- ENDING: Top Navigation Bar content formatting --------------------*/
+
+/*##################### ENDING: TOP NAVIGATION BAR #####################*/
